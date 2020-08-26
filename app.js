@@ -205,6 +205,32 @@ app.event("message", async ({ event, context }) => {
       });
     }    
     
+    if (
+      (event.text.includes("Netherlands") || event.text.includes("Belgium")|| event.text.includes("Norway")|| event.text.includes("Denmark")|| event.text.includes("Sweden")|| event.text.includes("Finland")|| event.text.includes("Poland")|| event.text.includes("France")|| event.text.includes("Italy")|| event.text.includes("Spain")|| event.text.includes("Portugal")|| event.text.includes("Greece")|| event.text.includes("Hungary")|| event.text.includes("Russia")|| event.text.includes("Ukraine")|| event.text.includes("Romania")|| event.text.includes("Czech Republic")|| event.text.includes("Portugal")|| event.text.includes("Serbia")|| event.text.includes("Bulgaria")|| event.text.includes("Slovakia")|| event.text.includes("Croatia")|| event.text.includes("Luxembourg") )&&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.channel,
+        thread_ts: event.ts,
+        text:
+          "Welcome aboard! :ship: I noticed you mentioned an area in Europe, be sure to join <#C014D55978F> to connect with others in your area!"
+      });
+    } 
+    
+    if (
+      (event.text.includes("Director") || event.text.includes("Manager") )&&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.channel,
+        thread_ts: event.ts,
+        text:
+          "Welcome aboard! :ship: I noticed you mentioned an SE Leadership title, be sure to join <#C015C68L78T> to connect with other SE Leaders!"
+      });
+    } 
+    
   } catch (error) {
     console.error(error);
   }
