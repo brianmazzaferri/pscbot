@@ -180,7 +180,7 @@ app.event("message", async ({ event, context }) => {
     }
   
     if (
-      (event.text.includes("Australia") || event.text.includes("Singapore") || event.text.includes("Japan") || event.text.includes("Melbourne") || event.text.includes("Sydney") || event.text.includes("India") || event.text.includes("apac") )&&
+      (event.text.includes("Australia") || event.text.includes("Singapore") || event.text.includes("Japan") || event.text.includes("Melbourne") || event.text.includes("Sydney") || event.text.includes("India ") || event.text.includes("apac") )&&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
