@@ -231,6 +231,45 @@ app.event("message", async ({ event, context }) => {
       });
     } 
     
+    if (
+      (event.text.includes("Peloton") || event.text.includes("peloton") )&&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.channel,
+        thread_ts: event.ts,
+        text:
+          "Welcome aboard! :ship: I noticed you mentioned Peloton, be sure to join <#C019M9W9HB9> to connect with other Peloton enthusiasts!"
+      });
+    } 
+    
+    if (
+      (event.text.includes(" Bread ") || event.text.includes("sourdough") )&&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.channel,
+        thread_ts: event.ts,
+        text:
+          "Welcome aboard! :ship: I noticed you mentioned bread, be sure to join <#C014NEJU2QH> to connect with other bread enthusiasts!"
+      });
+    }     
+    
+    if (
+      (event.text.includes("books") || event.text.includes("reading") )&&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.channel,
+        thread_ts: event.ts,
+        text:
+          "Welcome aboard! :ship: I noticed you mentioned books, be sure to join <#C0146EHBE5B> to discover great new PreSales books!"
+      });
+    }        
+    
   } catch (error) {
     console.error(error);
   }
