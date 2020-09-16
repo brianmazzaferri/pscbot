@@ -316,7 +316,6 @@ app.event("reaction_removed", async ({ event, context }) => {
   }
 });
 
-/*
 app.event("team_join", async ({ event, context }) => {
   try {
       const result = await app.client.chat.postMessage({
@@ -339,7 +338,6 @@ PS -  I'm big on feedback (if you listen to the podcast, we have many episodes o
     console.error(error);
   }
 });
-*/
 
 (async () => {
   // Start your app
