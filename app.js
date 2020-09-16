@@ -318,7 +318,8 @@ app.event("reaction_removed", async ({ event, context }) => {
 
 app.event("team_join", async ({ event, context }) => {
   try {
-    console.log(event);
+    console.log("EVENT.USER.ID");
+    console.log(event.user.id);
       const result = await app.client.chat.postMessage({
         token: process.env.JK_TOKEN,
         channel: event.user.id,
