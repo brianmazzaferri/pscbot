@@ -276,7 +276,7 @@ app.event("message", async ({ event, context }) => {
     ) {
         const result = await app.client.chat.postMessage({
         token: process.env.JK_TOKEN,
-        channel: "C015EMK7Z9N",
+        channel: event.user.id,
         as_user: true,
         text:
           `Hello!\n\n
@@ -321,7 +321,7 @@ app.event("team_join", async ({ event, context }) => {
     console.log(event);
       const result = await app.client.chat.postMessage({
         token: process.env.JK_TOKEN,
-        channel: event.user,
+        channel: event.user.id,
         as_user: true,
         text:
           `Hello!\n\n
