@@ -277,6 +277,7 @@ app.event("message", async ({ event, context }) => {
         const result = await app.client.chat.postMessage({
         token: process.env.JK_TOKEN,
         channel: event.user,
+        as_user: true,
         text:
           `Hello!\n\n
 Welcome to PreSales Collective and our global slack community. We appreciate you joining and helping grow awareness of our incredible profession. It is amazing to see this community grow by the day. We hope that you are taking advantage of the programs, podcast, webinars, blogs, and everything that PSC has to offer.\n\n
@@ -321,6 +322,7 @@ app.event("team_join", async ({ event, context }) => {
       const result = await app.client.chat.postMessage({
         token: process.env.JK_TOKEN,
         channel: event.user,
+        as_user: true,
         text:
           `Hello!\n\n
 Welcome to PreSales Collective and our global slack community. We appreciate you joining and helping grow awareness of our incredible profession. It is amazing to see this community grow by the day. We hope that you are taking advantage of the programs, podcast, webinars, blogs, and everything that PSC has to offer.\n\n
