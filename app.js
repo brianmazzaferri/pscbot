@@ -279,7 +279,7 @@ app.event("message", async ({ event, context }) => {
       console.log("END EVENT");
         const result = await app.client.chat.postMessage({
         token: process.env.JK_TOKEN,
-        channel: event.user.id,
+        channel: event.user,
         as_user: true,
         text:
           `Hello!\n\n
