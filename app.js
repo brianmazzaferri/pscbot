@@ -268,7 +268,28 @@ app.event("message", async ({ event, context }) => {
         text:
           "Welcome aboard! :ship: I noticed you mentioned books, be sure to join <#C0146EHBE5B> to discover great new PreSales books!"
       });
-    }        
+    }
+    
+    if (
+      (event.text.includes("!test"))&&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+        const result = await app.client.chat.postMessage({
+        token: process.env.JK_TOKEN,
+        channel: event.user,
+        text:
+          `Hello!\n\n
+Welcome to PreSales Collective and our global slack community. We appreciate you joining and helping grow awareness of our incredible profession. It is amazing to see this community grow by the day. We hope that you are taking advantage of the programs, podcast, webinars, blogs, and everything that PSC has to offer.\n\n
+Personally, I want to just thank you for joining. Someone once told me that PreSales is the best profession that no one has ever heard of. It is time to change that! It is time to ensure that PreSales professions have the seat at the table and a voice in organizations. PSC is here to bring awareness to the global community, provide resources and thought leadership, and help elevate the brand of PreSales. If you are doing something interesting, we want to hear about it and be the platform that helps amplify it!\n\n
+In this slack, you will get out what you put in. Our goal is provide a safe space where your questions can get answered and you can come to this community to better understand how others are doing demos, managing relationships, growing their skills, and everything in between. We have people from ALL OVER THE WORLD so understanding different perspectives may be the healthy friction that we all need to think differently.\n\n
+On the PreSalesCollective.com/slack page you should see more information about Slack Best Practices. Additionally, the Slackbot that messaged you is of help too! In the general channel, you will see our channel directory is pinned to the group as well.\n\n
+My ask is that you be active! Answer questions, join the industry and help channels, and be an active member of the community. If you need a break, take it because we will still be here. The community can be slow or overwhelming depending on how often you use slack! Find the right channels for you and get involved (don't forget about virtual coffees to meet others PreSales Professionals).\n\n
+Welcome to PreSales Collective! \n\n
+James Kaikis\n
+Co-Founder, PreSales Collective\n\n
+PS -  I'm big on feedback (if you listen to the podcast, we have many episodes on it) so please let me know the good and bad - we want to be better and it takes people like you to get us there. Also, if you have ideas for PSC or want to get involved, just shoot me a message and let's chat!`
+        });
+    } 
     
   } catch (error) {
     console.error(error);
