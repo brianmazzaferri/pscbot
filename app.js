@@ -271,7 +271,7 @@ app.event("message", async ({ event, context }) => {
     }
     
     if (
-      event.text.includes("Exploring New Opportunities")&&
+      (event.text.includes("Exploring New Opportunities") || event.text.includes("exploring new opportunities") || event.text.includes("job opportunities") || event.text.includes("Exploring new opportunities") || event.text.includes("new opportunities") || event.text.includes("New opportunities") || event.text.includes("New Opportunities") || event.text.includes("exploring opportunities") || event.text.includes("Exploring Opportunities") || event.text.includes("Exploring opportunities") || event.text.includes("new Opportunities") || event.text.includes("new opportunity"))&&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
