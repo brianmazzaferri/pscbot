@@ -271,6 +271,19 @@ app.event("message", async ({ event, context }) => {
     }
     
     if (
+      event.text.includes("Exploring New Opportunities")&&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.channel,
+        thread_ts: event.ts,
+        text:
+          "Welcome aboard! :ship: I noticed you're exploring new opportunities, be sure to join <#CQTG1JA02> to stay abreast of postings!"
+      });
+    }
+    
+    if (
       (event.text.includes("!test"))&&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
