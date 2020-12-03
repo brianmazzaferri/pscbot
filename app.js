@@ -193,7 +193,7 @@ app.event("message", async ({ event, context }) => {
     }
     
     if (
-      (event.text.includes("Toronto") || event.text.includes("Ontario") )&&
+      (event.text.includes("Toronto") || event.text.includes("Ontario") || event.text.includes("Canada") || event.text.includes("Edmonton") || event.text.includes("Vancouver") || event.text.includes("Calgary") || event.text.includes("Montreal") || event.text.includes("Ottawa") )&&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
@@ -201,7 +201,7 @@ app.event("message", async ({ event, context }) => {
         channel: event.channel,
         thread_ts: event.ts,
         text:
-          "Welcome aboard! :ship: I noticed you mentioned an area in Ontario, be sure to join <#C0147CFUJ8G> to connect with others in your area!"
+          "Welcome aboard! :ship: I noticed you mentioned an area in Canada, be sure to join <#C015T7WQF0X> to connect with others in your area!"
       });
     }    
     
