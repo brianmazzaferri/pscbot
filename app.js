@@ -282,9 +282,9 @@ app.event("message", async ({ event, context }) => {
           "Welcome aboard! :ship: I noticed you're exploring new opportunities, be sure to join <#CQTG1JA02> to stay abreast of postings!"
       });
     }
-/*      
+      
     if (
-      (event.text.includes("Utah") &&
+      (event.text.includes("Utah"))&&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
@@ -297,7 +297,7 @@ app.event("message", async ({ event, context }) => {
     }
   
     if (
-      (event.text.includes("Spain") &&
+      (event.text.includes("Spain"))&&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
@@ -310,7 +310,7 @@ app.event("message", async ({ event, context }) => {
     }
     
     if (
-      (event.text.includes("Dallas") || event.text.includes("Fort Worth") || event.text.includes("Arlington, TX") || event.text.includes("Plano, TX") || event.text.includes("Garland, TX") || event.text.includes("Irving, TX") || event.text.includes("Frisco, TX") &&
+      (event.text.includes("Dallas") || event.text.includes("Fort Worth") || event.text.includes("Arlington, TX") || event.text.includes("Plano, TX") || event.text.includes("Garland, TX") || event.text.includes("Irving, TX") || event.text.includes("Frisco, TX") ) &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
@@ -334,7 +334,7 @@ app.event("message", async ({ event, context }) => {
           "Welcome aboard! :ship: I noticed you mentioned an area in the Middle East, be sure to join <#C01M56UFT6J> to connect with others in your area!"
       });
     }
-    */
+    
     if (
       (event.text.includes("!test"))&&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
