@@ -356,7 +356,7 @@ PS -  I'm big on feedback (if you listen to the podcast, we talk about it all of
 
 app.event("member_joined_channel", async ({ event, context }) => {
   try {
-      if (event.channel === "G01NTJL7FDM" /*&& event.user !== "U013K053EPN"*/){
+      if (event.channel === "G01NTJL7FDM" && event.inviter !== "U013K053EPN"){
                 const result = await app.client.conversations.kick({
                 token: process.env.U_TOKEN,
                 channel: event.channel,
