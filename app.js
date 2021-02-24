@@ -356,11 +356,17 @@ PS -  I'm big on feedback (if you listen to the podcast, we talk about it all of
 
 app.event("member_joined_channel", async ({ event, context }) => {
   try {
-      if (event.channel === "G01NTJL7FDM"){
+      if (event.channel === "G01NTJL7FDM" /*&& event.user !== "U013K053EPN"*/){
                 const result = await app.client.conversations.kick({
                 token: process.env.U_TOKEN,
                 channel: event.channel,
                 user: event.user
+                });
+        
+                const result2 = await app.client.chat.postMessage({
+                token:context.botToken,
+                channel: event.user
+                text: "Greetings! It seems you have tried to add a user to a restricted channel. These channels are exclusive to paid members of the PreSales Leadership Collective, please contact <@U012N53R2JZ> or <@UKCAMQE3G> if you have further questions."
                 });
       };
 
