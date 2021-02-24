@@ -282,7 +282,7 @@ app.event("message", async ({ event, context }) => {
           "Welcome aboard! :ship: I noticed you're exploring new opportunities, be sure to join <#CQTG1JA02> to stay abreast of postings!"
       });
     }
-    
+/*      
     if (
       (event.text.includes("Utah") &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
@@ -295,7 +295,7 @@ app.event("message", async ({ event, context }) => {
           "Welcome aboard! :ship: I noticed you mentioned Utah, be sure to join <#C015M0YLCDQ> to connect with others in your area!"
       });
     }
-/*    
+  
     if (
       (event.text.includes("Spain") &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
