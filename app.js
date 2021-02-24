@@ -282,7 +282,7 @@ app.event("message", async ({ event, context }) => {
           "Welcome aboard! :ship: I noticed you're exploring new opportunities, be sure to join <#CQTG1JA02> to stay abreast of postings!"
       });
     }
-/*    
+    
     if (
       (event.text.includes("Utah") &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
@@ -295,7 +295,7 @@ app.event("message", async ({ event, context }) => {
           "Welcome aboard! :ship: I noticed you mentioned Utah, be sure to join <#C015M0YLCDQ> to connect with others in your area!"
       });
     }
-    
+/*    
     if (
       (event.text.includes("Spain") &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
@@ -309,7 +309,7 @@ app.event("message", async ({ event, context }) => {
       });
     }
     
-        if (
+    if (
       (event.text.includes("Dallas") || event.text.includes("Fort Worth") || event.text.includes("Arlington, TX") || event.text.includes("Plano, TX") || event.text.includes("Garland, TX") || event.text.includes("Irving, TX") || event.text.includes("Frisco, TX") &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
@@ -322,7 +322,7 @@ app.event("message", async ({ event, context }) => {
       });
     }
     
-        if (
+    if (
       (event.text.includes("Egypt") || event.text.includes("UAE") || event.text.includes("Dubai") || event.text.includes("Abu Dhabi") || event.text.includes("Qatar") || event.text.includes("Kuwait") || event.text.includes("Saudia Arabia") || event.text.includes("Bahrain") || event.text.includes("Morocco") || event.text.includes("Tunisia") || event.text.includes("Jordan") || event.text.includes("Lebanon"))&&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
