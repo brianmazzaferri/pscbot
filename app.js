@@ -354,6 +354,21 @@ PS -  I'm big on feedback (if you listen to the podcast, we talk about it all of
   }
 });
 
+app.event("member_joined_channel", async ({ event, context }) => {
+  try {
+      if (event.channel === "G01NTJL7FDM"{
+                const result = await app.client.conversations.kick({
+                token: context.botToken,
+                channel: event.channel,
+                user: event.user
+                });
+      };
+
+  } catch(error){
+    console.error(error);
+  }
+});
+
 (async () => {
   // Start your app
   await app.start(process.env.PORT || 3000);
