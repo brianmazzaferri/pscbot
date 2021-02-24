@@ -365,7 +365,7 @@ app.event("member_joined_channel", async ({ event, context }) => {
         
                 const result2 = await app.client.chat.postMessage({
                 token:context.botToken,
-                channel: event.user
+                channel: event.user,
                 text: "Greetings! It seems you have tried to add a user to a restricted channel. These channels are exclusive to paid members of the PreSales Leadership Collective, please contact <@U012N53R2JZ> or <@UKCAMQE3G> if you have further questions."
                 });
       };
