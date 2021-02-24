@@ -282,8 +282,8 @@ app.event("message", async ({ event, context }) => {
           "Welcome aboard! :ship: I noticed you're exploring new opportunities, be sure to join <#CQTG1JA02> to stay abreast of postings!"
       });
     }
-    
-        if (
+/*    
+    if (
       (event.text.includes("Utah") &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
@@ -296,7 +296,7 @@ app.event("message", async ({ event, context }) => {
       });
     }
     
-        if (
+    if (
       (event.text.includes("Spain") &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
@@ -334,7 +334,7 @@ app.event("message", async ({ event, context }) => {
           "Welcome aboard! :ship: I noticed you mentioned an area in the Middle East, be sure to join <#C01M56UFT6J> to connect with others in your area!"
       });
     }
-    
+    */
     if (
       (event.text.includes("!test"))&&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
