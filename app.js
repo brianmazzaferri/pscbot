@@ -358,7 +358,7 @@ app.event("member_joined_channel", async ({ event, context }) => {
   try {
       if (event.channel === "G01NTJL7FDM"){
                 const result = await app.client.conversations.kick({
-                token: context.botToken,
+                token: process.env.JK_TOKEN,
                 channel: event.channel,
                 user: event.user
                 });
