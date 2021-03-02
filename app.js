@@ -446,7 +446,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
 	"blocks": [
 		{
 			"type": "section",
-			"block_id":shortcut.channel,
+			"block_id":shortcut.channel.id,
 			"text": {
 				"type": "mrkdwn",
 				"text": "*User & Message:*"
