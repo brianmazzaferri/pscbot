@@ -535,7 +535,7 @@ app.view('delete_and_notify', async ({ ack, body, view, client, context }) => {
 	  
 	  const result = await client.chat.postMessage({
 		  token:context.botToken,
-		  channel:view.blocks[1].text,
+		  channel:view.blocks[1].text.text,
 		  text:"TEST MESSAGE"
   		});
   } catch (error) {
