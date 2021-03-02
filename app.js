@@ -522,7 +522,10 @@ app.view('delete_and_modify', async ({ ack, body, view, client }) => {
 
   // Message the user
   try {
-	  
+	  console.log("BODY");
+	  console.log(body);
+	  console.log("VIEW");
+	  console.log(view);
   }
   catch (error) {
     console.error(error);
