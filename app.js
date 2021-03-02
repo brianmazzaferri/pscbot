@@ -516,7 +516,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
   }
 });
 
-app.view('delete_and_modify', async ({ ack, body, view, client }) => {
+app.view('delete_and_notify', async ({ ack, body, view, client }) => {
   // Acknowledge the view_submission event
   await ack();
 
