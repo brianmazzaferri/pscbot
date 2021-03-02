@@ -534,14 +534,14 @@ app.view('delete_and_notify', async ({ ack, body, view, client, context }) => {
 	  console.log(view.state.values.message);
 	  
 	  const result1 = await client.chat.delete({
-		  token: context.botToken,
+		  token: process.env.BM_TOKEN,
 		  channel:view.blocks[0].block_id,
 		  ts:view.blocks[2].block_id
 	  });
 	  
 	  let msg = view.state.values.message.messagecontent.value + "\n\n*Deleted Message:*\n\n" + view.blocks[2].text.text;
 	  const result = await client.chat.postMessage({
-		  token:process.env.JK_TOKEN,
+		  token:context.botToken,
 		  channel:view.blocks[1].text.text,
 		  text:msg
   	  });
