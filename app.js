@@ -448,7 +448,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
 			"block_id": "message id",
 			"text": {
 				"type": "mrkdwn",
-				"text": shortcut.message
+				"text": JSON.stringify(shortcut.message)
 			}
 		},
 		{
