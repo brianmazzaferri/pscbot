@@ -533,8 +533,8 @@ app.view('delete_and_notify', async ({ ack, body, view, client }) => {
 		  token:context.botToken,
 		  channel:view.blocks[1].text,
 		  text:"TEST MESSAGE"
-  });
-  catch (error) {
+  		});
+  } catch (error) {
     console.error(error);
   }
 
