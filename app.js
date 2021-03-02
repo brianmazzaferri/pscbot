@@ -535,8 +535,8 @@ app.view('delete_and_notify', async ({ ack, body, view, client, context }) => {
 	  
 	  const result1 = await client.chat.delete({
 		  token: context.botToken,
-		  channel:
-		  ts:
+		  channel:"",
+		  ts:"",
 		  as_user:false
 	  });
 	  
