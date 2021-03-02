@@ -420,7 +420,32 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
   try {
     // Acknowledge shortcut request
     await ack();
-
+    
+    if ((shortcut.user === "U013K053EPN") || (shortcut.user === "U012N53R2JZ") || (shortcut.user === "U012N53R2JZ")){
+      const result = await client.views.open({
+      trigger_id: shortcut.trigger_id,
+      view: {
+        type: "modal",
+        title: {
+          type: "plain_text",
+          text: "Message Moderation"
+        },
+        close: {
+          type: "plain_text",
+          text: "Close"
+        },
+        blocks: [
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: "You do have permission!"
+            }
+          }
+        ]
+      }
+    });
+    } else {
     // Call the views.open method using one of the built-in WebClients
     const result = await client.views.open({
       trigger_id: shortcut.trigger_id,
@@ -439,13 +464,13 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
             type: "section",
             text: {
               type: "mrkdwn",
-              text: "I'm sorry Hal, I can't do that.\nYou do not have moderation permissions"
+              text: "I'm sorry Dave, I'm afraid can't do that.\n(You do not have moderation permissions)"
             }
           }
         ]
       }
     });
-
+    }
     console.log(result);
   }
   catch (error) {
