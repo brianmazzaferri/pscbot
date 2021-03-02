@@ -422,6 +422,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
     await ack();
     console.log(shortcut.user);
     if ((shortcut.user.id === "U013K053EPN") || (shortcut.user.id === "U012N53R2JZ") || (shortcut.user.id === "U012N53R2JZ")){
+	    
       const result = await client.views.open({
       trigger_id: shortcut.trigger_id,
       view: {
@@ -448,7 +449,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
 			"block_id": shortcut.user.id,
 			"text": {
 				"type": "mrkdwn",
-				"text": "*User:*" & shortcut.user.name
+				"text": shortcut.user.name
 			}
 		},
 		{
@@ -456,7 +457,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
 			"block_id": shortcut.message.client_msg_id,
 			"text": {
 				"type": "mrkdwn",
-				"text": "*Message:*" & shortcut.message.text
+				"text": JSON.stringify(shortcut.message.text)
 			}
 		},		
 		{
