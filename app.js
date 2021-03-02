@@ -420,7 +420,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
   try {
     // Acknowledge shortcut request
     await ack();
-    
+    console.log(shortcut.user);
     if ((shortcut.user === "U013K053EPN") || (shortcut.user === "U012N53R2JZ") || (shortcut.user === "U012N53R2JZ")){
       const result = await client.views.open({
       trigger_id: shortcut.trigger_id,
@@ -447,7 +447,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
     });
     } else {
     // Call the views.open method using one of the built-in WebClients
-    const result = await client.views.open({
+    const result1 = await client.views.open({
       trigger_id: shortcut.trigger_id,
       view: {
         type: "modal",
@@ -471,7 +471,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
       }
     });
     }
-    console.log(result);
+    console.log(result1);
   }
   catch (error) {
     console.error(error);
