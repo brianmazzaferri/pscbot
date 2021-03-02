@@ -414,6 +414,45 @@ app.event("member_joined_channel", async ({ event, context }) => {
   }
 });
 
+// The open_modal shortcut opens a plain old modal
+app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
+
+  try {
+    // Acknowledge shortcut request
+    await ack();
+
+    // Call the views.open method using one of the built-in WebClients
+    const result = await client.views.open({
+      trigger_id: shortcut.trigger_id,
+      view: {
+        type: "modal",
+        title: {
+          type: "plain_text",
+          text: "Message Moderation"
+        },
+        close: {
+          type: "plain_text",
+          text: "Close"
+        },
+        blocks: [
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: "I'm sorry Hal, I can't do that.\nYou do not have moderation permissions"
+            }
+          }
+        ]
+      }
+    });
+
+    console.log(result);
+  }
+  catch (error) {
+    console.error(error);
+  }
+});
+
 (async () => {
   // Start your app
   await app.start(process.env.PORT || 3000);
