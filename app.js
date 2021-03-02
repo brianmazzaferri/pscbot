@@ -526,6 +526,8 @@ app.view('delete_and_notify', async ({ ack, body, view, client }) => {
 	  console.log(body);
 	  console.log("VIEW");
 	  console.log(view);
+	  console.log("VIEW.STATE.VALUES.MESSAGE");
+	  console.log(view.state.values.message);
   }
   catch (error) {
     console.error(error);
