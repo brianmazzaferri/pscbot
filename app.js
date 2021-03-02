@@ -444,7 +444,16 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
 	},
 	"blocks": [
 		{
+			"type": "section",
+			"block_id": "message id",
+			"text": {
+				"type": "mrkdwn",
+				"text": shortcut.message
+			}
+		},
+		{
 			"type": "input",
+			"block_id": "message",
 			"label": {
 				"type": "plain_text",
 				"text": "Message to send original poster (from PSCBot)",
@@ -489,6 +498,20 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
   catch (error) {
     console.error(error);
   }
+});
+
+app.view('delete_and_modify', async ({ ack, body, view, client }) => {
+  // Acknowledge the view_submission event
+  await ack();
+
+  // Message the user
+  try {
+	  
+  }
+  catch (error) {
+    console.error(error);
+  }
+
 });
 
 (async () => {
