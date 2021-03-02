@@ -446,6 +446,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
 	"blocks": [
 		{
 			"type": "section",
+			"block_id":shortcut.channel,
 			"text": {
 				"type": "mrkdwn",
 				"text": "*User & Message:*"
@@ -461,7 +462,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
 		},
 		{
 			"type": "section",
-			"block_id": "messagetext",
+			"block_id": "shortcut.message.ts",
 			"text": {
 				"type": "mrkdwn",
 				"text": shortcut.message.text
@@ -532,12 +533,19 @@ app.view('delete_and_notify', async ({ ack, body, view, client, context }) => {
 	  console.log("VIEW.STATE.VALUES.MESSAGE");
 	  console.log(view.state.values.message);
 	  
+	  const result1 = await client.chat.delete({
+		  token: context.botToken,
+		  channel:
+		  ts:
+		  as_user:false
+	  });
+	  
 	  let msg = view.state.values.message.messagecontent.value + "\n\n*Deleted Message:*\n\n" + view.blocks[2].text.text;
 	  const result = await client.chat.postMessage({
 		  token:context.botToken,
 		  channel:view.blocks[1].text.text,
 		  text:msg
-  		});
+  	  });
   } catch (error) {
     console.error(error);
   }
