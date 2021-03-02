@@ -453,7 +453,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
 		},
 		{
 			"type": "section",
-			"block_id": shortcut.message.user,
+			"block_id": "messageuser",
 			"text": {
 				"type": "mrkdwn",
 				"text": shortcut.message.user
@@ -461,7 +461,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
 		},
 		{
 			"type": "section",
-			"block_id": shortcut.message.client_msg_id,
+			"block_id": "messagetext",
 			"text": {
 				"type": "mrkdwn",
 				"text": shortcut.message.text
