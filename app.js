@@ -421,7 +421,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
     // Acknowledge shortcut request
     await ack();
     console.log(shortcut.user);
-    if ((shortcut.user === "U013K053EPN") || (shortcut.user === "U012N53R2JZ") || (shortcut.user === "U012N53R2JZ")){
+    if ((shortcut.user.id === "U013K053EPN") || (shortcut.user.id === "U012N53R2JZ") || (shortcut.user.id === "U012N53R2JZ")){
       const result = await client.views.open({
       trigger_id: shortcut.trigger_id,
       view: {
