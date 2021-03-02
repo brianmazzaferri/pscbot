@@ -425,25 +425,38 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
       const result = await client.views.open({
       trigger_id: shortcut.trigger_id,
       view: {
-        type: "modal",
-        title: {
-          type: "plain_text",
-          text: "Message Moderation"
-        },
-        close: {
-          type: "plain_text",
-          text: "Close"
-        },
-        blocks: [
-          {
-            type: "section",
-            text: {
-              type: "mrkdwn",
-              text: "You do have permission!"
-            }
-          }
-        ]
-      }
+	"type": "modal",
+	"callback_id": "delete_and_notify",
+	"submit": {
+		"type": "plain_text",
+		"text": "Delete Message",
+		"emoji": true
+	},
+	"close": {
+		"type": "plain_text",
+		"text": "Cancel",
+		"emoji": true
+	},
+	"title": {
+		"type": "plain_text",
+		"text": "Delete & Notify",
+		"emoji": true
+	},
+	"blocks": [
+		{
+			"type": "input",
+			"label": {
+				"type": "plain_text",
+				"text": "Message to send original poster (from PSCBot)",
+				"emoji": true
+			},
+			"element": {
+				"type": "plain_text_input",
+				"multiline": true
+			}
+		}
+	]
+}
     });
     } else {
     // Call the views.open method using one of the built-in WebClients
