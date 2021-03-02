@@ -522,6 +522,8 @@ app.view('delete_and_notify', async ({ ack, body, view, client, context }) => {
 
   // Message the user
   try {
+	  console.log("view.blocks[1].text");
+	  console.log(view.blocks[1].text);	  
 	  console.log("BODY");
 	  console.log(body);
 	  console.log("VIEW");
