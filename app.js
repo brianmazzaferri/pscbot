@@ -504,7 +504,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
             type: "section",
             text: {
               type: "mrkdwn",
-              text: "I'm sorry Dave, I'm afraid can't do that.\n(You do not have moderation permissions)"
+              text: "Apologies, but you cannot take this action as you do not have moderation permissions)"
             }
           }
         ]
