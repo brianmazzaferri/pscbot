@@ -310,7 +310,7 @@ app.event("message", async ({ event, context }) => {
     }
     
     if (
-      (event.text.includes("Egypt") || event.text.includes("UAE") || event.text.includes("Dubai") || event.text.includes("Abu Dhabi") || event.text.includes("Qatar") || event.text.includes("Kuwait") || event.text.includes("Saudia Arabia") || event.text.includes("Bahrain") || event.text.includes("Morocco") || event.text.includes("Tunisia") || event.text.includes("Jordan") || event.text.includes("Lebanon"))&&
+      (event.text.includes("Egypt") || event.text.includes("UAE") || event.text.includes("Dubai") || event.text.includes("Abu Dhabi") || event.text.includes("Qatar") || event.text.includes("Kuwait") || event.text.includes("Saudia Arabia") || event.text.includes("Bahrain") || event.text.includes("Morocco") || event.text.includes("Tunisia") || event.text.includes("Lebanon"))&&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
@@ -395,7 +395,7 @@ PS -  I'm big on feedback (if you listen to the podcast, we talk about it all of
 
 app.event("member_joined_channel", async ({ event, context }) => {
   try {
-      if (event.channel === "G01NTJL7FDM" && event.inviter !== "U013K053EPN"){
+      if ((event.channel === "G01NTJL7FDM" || event.channel === "G01PCJYQLK1" ||event.channel === "C01QFP5FCBB" ||event.channel === "G01PQ9F3V1B" ||event.channel === "G01QH6YC35E" ||event.channel === "G01PTJ3H6LT" ||event.channel === "G01PLJUDUUW" ||event.channel === "G01PZGJQY3W" ||event.channel === "G01PZGL0T4L" ||event.channel === "C01PLJB7A22" ||event.channel === "G01PCJDA2GP" ||event.channel === "G01PLJC784E" ||event.channel === "G01PCJ99NCX" ||event.channel === "G01PQ903KRT" ||event.channel === "G01PZGDE0G4" ||event.channel === "G01PLJD91RC" || ) && event.inviter !== "U013K053EPN" && event.inviter !== "U012N53R2JZ" && event.inviter !== "UKCAMQE3G"){
                 const result = await app.client.conversations.kick({
                 token: process.env.U_TOKEN,
                 channel: event.channel,
