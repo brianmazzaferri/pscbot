@@ -395,7 +395,7 @@ PS -  I'm big on feedback (if you listen to the podcast, we talk about it all of
 
 app.event("member_joined_channel", async ({ event, context }) => {
   try {
-      if ((event.channel === "G01NTJL7FDM" || event.channel === "G01PCJYQLK1" ||event.channel === "G01PQ9F3V1B" ||event.channel === "G01QH6YC35E" ||event.channel === "G01PTJ3H6LT" ||event.channel === "G01PLJUDUUW" ||event.channel === "G01PZGJQY3W" ||event.channel === "G01PZGL0T4L" ||event.channel === "C01PLJB7A22" ||event.channel === "G01PCJDA2GP" ||event.channel === "G01PLJC784E" ||event.channel === "G01PCJ99NCX" ||event.channel === "G01PQ903KRT" ||event.channel === "G01PZGDE0G4" ||event.channel === "G01PLJD91RC" ) && event.inviter !== "U013K053EPN" && event.inviter !== "U012N53R2JZ" && event.inviter !== "UKCAMQE3G"){
+      if ((event.channel === "G01NTJL7FDM" || event.channel === "G01PCJYQLK1" ||event.channel === "G01PQ9F3V1B" ||event.channel === "G01QH6YC35E" ||event.channel === "G01PTJ3H6LT" ||event.channel === "G01PLJUDUUW" ||event.channel === "G01R36MKW80" ||event.channel === "G01QDBQEKPC" ||event.channel === "C01PYBW5TT9" ||event.channel === "G01QS0S5RPT" ||event.channel === "G01QDBQA2SW" ||event.channel === "G01QS0S31UZ" ||event.channel === "G01R36MNMMW" ||event.channel === "G01PYJDK8BZ" ||event.channel === "G01PYJDMTJB" ) && event.inviter !== "U013K053EPN" && event.inviter !== "U012N53R2JZ" && event.inviter !== "UKCAMQE3G"){
                 const result = await app.client.conversations.kick({
                 token: process.env.U_TOKEN,
                 channel: event.channel,
