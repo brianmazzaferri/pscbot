@@ -305,7 +305,7 @@ app.event("message", async ({ event, context }) => {
         channel: event.channel,
         thread_ts: event.ts,
         text:
-          "Welcome aboard! :ship: I noticed you mentioned Utah, be sure to join <#C01L7MMDD0U> to connect with others in your area!"
+          "Welcome aboard! :ship: I noticed you mentioned Spain, be sure to join <#C01L7MMDD0U> to connect with others in your area!"
       });
     }
     
