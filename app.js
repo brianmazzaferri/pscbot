@@ -37,7 +37,7 @@ app.event("message", async ({ event, context }) => {
     }
 
     if (
-      event.text.includes("Los Angeles") &&
+      (event.text.includes("Los Angeles") || (event.text.includes("San Diego")) &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
@@ -45,7 +45,7 @@ app.event("message", async ({ event, context }) => {
         channel: event.channel,
         thread_ts: event.ts,
         text:
-          "Welcome aboard! :ship: I noticed you mentioned Los Angeles, be sure to join <#C013J8GHT8B> to connect with others in your area!"
+          "Welcome aboard! :ship: I noticed you mentioned a city in Southern California, be sure to join <#C013J8GHT8B> to connect with others in your area!"
       });
     }
     
@@ -63,7 +63,7 @@ app.event("message", async ({ event, context }) => {
     }
     
     if (
-      event.text.includes("Boston") &&
+      (event.text.includes("Boston") || event.text.includes("Providence")) &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
@@ -71,7 +71,7 @@ app.event("message", async ({ event, context }) => {
         channel: event.channel,
         thread_ts: event.ts,
         text:
-          "Welcome aboard! :ship: I noticed you mentioned Boston, be sure to join <#C013QRNRJ1Z> to connect with others in your area!"
+          "Welcome aboard! :ship: I noticed you mentioned a city in New England, be sure to join <#C013QRNRJ1Z> to connect with others in your area!"
       });
     } 
     
@@ -89,7 +89,7 @@ app.event("message", async ({ event, context }) => {
     }
     
     if (
-      event.text.includes("Dallas") &&
+      (event.text.includes("Dallas") || event.text.includes("Fort Worth") || event.text.includes("Plano")) &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
@@ -97,12 +97,12 @@ app.event("message", async ({ event, context }) => {
         channel: event.channel,
         thread_ts: event.ts,
         text:
-          "Welcome aboard! :ship: I noticed you mentioned Dallas, be sure to join <#C013WM5EGNM> to connect with others in your area!"
+          "Welcome aboard! :ship: I noticed you mentioned an area near Dallas, be sure to join <#C013WM5EGNM> to connect with others in your area!"
       });
     }
 
     if (
-      event.text.includes("London") &&
+      (event.text.includes("London") || event.text.includes(" UK ") || event.text.includes("United Kingdom")) &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
@@ -110,12 +110,12 @@ app.event("message", async ({ event, context }) => {
         channel: event.channel,
         thread_ts: event.ts,
         text:
-          "Welcome aboard! :ship: I noticed you mentioned London, be sure to join <#C013ULQKMPZ> to connect with others in your area!"
+          "Welcome aboard! :ship: I noticed you mentioned the UK, be sure to join <#C013ULQKMPZ> to connect with others in your area!"
       });
     }
     
     if (
-      event.text.includes("DC") &&
+      (event.text.includes("DC") || event.text.includes("Baltimore")) &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
@@ -123,7 +123,7 @@ app.event("message", async ({ event, context }) => {
         channel: event.channel,
         thread_ts: event.ts,
         text:
-          "Welcome aboard! :ship: I noticed you mentioned DC, be sure to join <#C014QDS30KT> to connect with others in your area!"
+          "Welcome aboard! :ship: I noticed you mentioned a city near DC, be sure to join <#C014QDS30KT> to connect with others in your area!"
       });
     }
     
@@ -180,7 +180,7 @@ app.event("message", async ({ event, context }) => {
     }
   
     if (
-      (event.text.includes("Australia") || event.text.includes("Singapore") || event.text.includes("Japan") || event.text.includes("Melbourne") || event.text.includes("Sydney") || event.text.includes("India ") || event.text.includes("apac") )&&
+      (event.text.includes("Australia") || event.text.includes("Singapore") || event.text.includes("Japan") || event.text.includes("Melbourne") || event.text.includes("Sydney") || event.text.includes("apac") )&&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
@@ -284,7 +284,7 @@ app.event("message", async ({ event, context }) => {
     }
       
     if (
-      (event.text.includes("Utah"))&&
+      (event.text.includes("Utah")|| event.text.includes("Provo")||event.text.includes("Salt Lake City"))&&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
@@ -292,12 +292,12 @@ app.event("message", async ({ event, context }) => {
         channel: event.channel,
         thread_ts: event.ts,
         text:
-          "Welcome aboard! :ship: I noticed you mentioned Utah, be sure to join <#C015M0YLCDQ> to connect with others in your area!"
+          "Welcome aboard! :ship: I noticed you mentioned a city in Utah, be sure to join <#C015M0YLCDQ> to connect with others in your area!"
       });
     }
   
     if (
-      (event.text.includes("Spain"))&&
+      (event.text.includes("Spain") || event.text.includes("Madrid") || event.text.includes("Barcelona"))&&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
@@ -319,6 +319,123 @@ app.event("message", async ({ event, context }) => {
         thread_ts: event.ts,
         text:
           "Welcome aboard! :ship: I noticed you mentioned an area in the Middle East, be sure to join <#C01M56UFT6J> to connect with others in your area!"
+      });
+    }
+
+    if (
+      (event.text.includes("Ireland") || event.text.includes("Dublin"))&&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.channel,
+        thread_ts: event.ts,
+        text:
+          "Welcome aboard! :ship: I noticed you mentioned an area in Ireland, be sure to join <#C018DLSCYBY> to connect with others in your area!"
+      });
+    }
+	
+    if (
+      (event.text.includes("Arizona") || event.text.includes("Phoenix") || event.text.includes("Scottsdale") || event.text.includes("Tucson") || event.text.includes("Tempe"))&&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.channel,
+        thread_ts: event.ts,
+        text:
+          "Welcome aboard! :ship: I noticed you mentioned an area in Arizona, be sure to join <#C016LLGAXU2> to connect with others in your area!"
+      });
+    }
+	
+    if (
+      (event.text.includes("Seattle") || event.text.includes("Bellevue"))&&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.channel,
+        thread_ts: event.ts,
+        text:
+          "Welcome aboard! :ship: I noticed you mentioned an area near Seattle, be sure to join <#C01EYD0G30E> to connect with others in your area!"
+      });
+    }
+	
+    if (
+      (event.text.includes("Minneapolis") || event.text.includes("St. Paul") || event.text.includes("Minnesota"))&&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.channel,
+        thread_ts: event.ts,
+        text:
+          "Welcome aboard! :ship: I noticed you mentioned an area in Minnesota, be sure to join <#C019LM8AY9L> to connect with others in your area!"
+      });
+    }
+	
+    if (
+      event.text.includes("Africa") &&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.channel,
+        thread_ts: event.ts,
+        text:
+          "Welcome aboard! :ship: I noticed you mentioned Africa, be sure to join <#C01NLV3297F> to connect with others in your area!"
+      });   
+    }
+	
+    if (
+      (event.text.includes("Florida") || event.text.includes("Miami") || event.text.includes("Orlando") || event.text.includes("Jacksonville") || event.text.includes("Tampa") || event.text.includes("Lauderdale"))&&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.channel,
+        thread_ts: event.ts,
+        text:
+          "Welcome aboard! :ship: I noticed you mentioned an area in Florida, be sure to join <#C01R6QWBP2N> to connect with others in your area!"
+      });
+    }
+	
+    if (
+      event.text.includes("Indianapolis") &&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.channel,
+        thread_ts: event.ts,
+        text:
+          "Welcome aboard! :ship: I noticed you mentioned Indianapolis, be sure to join <#C01KC0T3B9T> to connect with others in your area!"
+      });   
+    }
+	
+    if (
+      event.text.includes(" India ") &&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.channel,
+        thread_ts: event.ts,
+        text:
+          "Welcome aboard! :ship: I noticed you mentioned India, be sure to join <#C016GA6RQKW> to connect with others in your area!"
+      });   
+    }
+	
+    if (
+      (event.text.includes("Netherlands") || event.text.includes("Belgium") || event.text.includes("Luxembourg"))&&
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.channel,
+        thread_ts: event.ts,
+        text:
+          "Welcome aboard! :ship: I noticed you mentioned an area in Benelux, be sure to join <#C01ARNG7FC2> to connect with others in your area!"
       });
     }
     
