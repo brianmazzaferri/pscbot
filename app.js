@@ -63,7 +63,7 @@ app.event("message", async ({ event, context }) => {
     }
     
     if (
-      (event.text.includes("Boston") || event.text.includes("Providence")) &&
+      (event.text.includes("Boston") || event.text.includes("Providence")|| event.text.includes("Maine")|| event.text.includes("New Hampshire")|| event.text.includes("Vermont")|| event.text.includes("Massachusetts")|| event.text.includes("Rhode Island")) &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
