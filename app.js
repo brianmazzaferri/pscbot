@@ -454,7 +454,7 @@ app.event("message", async ({ event, context }) => {
         channel: event.channel,
 	ts: event.ts,
         text:
-          "Hello! You have attempted to post in <#C022YTE455E>, which is a restricted channel. Please use the Submit Pitch workflow to submit your post instead"
+          "Hello! You have attempted to post in <#C022YTE455E>, which is a restricted channel. Please use the New Pitch workflow to submit your post instead"
       });  
     }
     
