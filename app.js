@@ -438,6 +438,25 @@ app.event("message", async ({ event, context }) => {
           "Welcome aboard! :ship: I noticed you mentioned an area in Benelux, be sure to join <#C01ARNG7FC2> to connect with others in your area!"
       });
     }
+	  
+    if (
+      (event.user != "U012N53R2JZ" && event.user != "U013K053EPN" && event.user != "UKCAMQE3G" ) &&
+      (event.channel === "C022YTE455E")
+    ) {
+      const result = await app.client.chat.postMessage({
+        token: context.botToken,
+        channel: event.user,
+        text:
+          "Hello! You have attempted to post in <#C022YTE455E>, which is a restricted channel. Please use the Submit Pitch workflow to submit your post instead"
+      });   
+      const result2 = await app.client.chat.delete({
+        token: process.env.JK_TOKEN,
+        channel: event.channel,
+	ts: event.ts,
+        text:
+          "Hello! You have attempted to post in <#C022YTE455E>, which is a restricted channel. Please use the Submit Pitch workflow to submit your post instead"
+      });  
+    }
     
     if (
       (event.text.includes("!test"))&&
