@@ -115,7 +115,7 @@ app.event("message", async ({ event, context }) => {
     }
     
     if (
-      (event.text.includes("DC") || event.text.includes("Baltimore")) && !(event.text.includes("SFDC") &&
+      (event.text.includes("DC") || event.text.includes("Baltimore")) && !(event.text.includes("SFDC")) &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
