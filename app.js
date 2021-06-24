@@ -128,7 +128,7 @@ app.event("message", async ({ event, context }) => {
     }
     
     if (
-      (event.text.includes("Raleigh") || event.text.includes("Durham") || event.text.includes("Chapel Hill")) || event.text.includes("Cary"))|| event.text.includes("Charlotte"))|| event.text.includes(" NC"))|| event.text.includes(" SC"))&&
+      (event.text.includes("Raleigh") || event.text.includes("Durham") || event.text.includes("Chapel Hill") || event.text.includes("Cary") || event.text.includes("Charlotte")|| event.text.includes(" NC")|| event.text.includes(" SC"))&&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
