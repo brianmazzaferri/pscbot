@@ -128,7 +128,7 @@ app.event("message", async ({ event, context }) => {
     }
     
     if (
-      (event.text.includes("Raleigh") || event.text.includes("Durham") || event.text.includes("Chapel Hill"))&&
+      (event.text.includes("Raleigh") || event.text.includes("Durham") || event.text.includes("Chapel Hill")) || event.text.includes("Cary"))|| event.text.includes("Charlotte"))|| event.text.includes(" NC"))|| event.text.includes(" SC"))&&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
       const result = await app.client.chat.postMessage({
@@ -136,7 +136,7 @@ app.event("message", async ({ event, context }) => {
         channel: event.channel,
         thread_ts: event.ts,
         text:
-          "Welcome aboard! :ship: I noticed you mentioned The Triangle, be sure to join <#C013UV3NPAQ> to connect with others in your area!"
+          "Welcome aboard! :ship: I noticed you mentioned an area in the Carolinas, be sure to join <#C01N9FZQS1H> to connect with others in your area!"
       });
     }
     
