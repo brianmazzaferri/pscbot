@@ -810,7 +810,6 @@ app.view('atchannelmodal', async ({ ack, body, view, client, context }) => {
 	  let msg = "<!channel>\n" + "insert message here" + "\nposted by " + "insert user here";
 	  const result = await client.chat.postMessage({
 		  token:process.env.JK_TOKEN,
-		  as_user:false,
 		  icon_emoji:":psc:",
 		  username:"Announcement Bot",
 		  channel:chan,
