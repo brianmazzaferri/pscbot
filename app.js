@@ -804,14 +804,14 @@ app.view('atchannelmodal', async ({ ack, body, view, client, context }) => {
 	  console.log(body);
 	  console.log("VIEW");
 	  console.log(view);
-	  console.log("VIEW.STATE.VALUES.CHANNELSELECT");
-	  console.log(view.state.values.channelselect);
-	  console.log("VIEW.STATE.VALUES.CHANNELMESSAGE");
-	  console.log(view.state.values.channelmessage);
+	  console.log("VIEW.STATE.VALUES.CHANNELSELECT[0]");
+	  console.log(view.state.values.channelselect[0]);
+	  console.log("VIEW.STATE.VALUES.CHANNELMESSAGE[0]");
+	  console.log(view.state.values.channelmessage[0]);
 	  let chan = view.state.values.channelselect[0].selected_conversation;
 	  let msg = "<!channel>\n" + view.state.values.channelmessage[0].value + "\nposted by <@" + "insert user here" + ">";
 	  const result = await client.chat.postMessage({
-		  token:process.env.JK_TOKEN,
+		  token:process.env.JK_TOKEN, //process.env.ANNOUNCEBOTTOKEN
 		  icon_emoji:":psc:",
 		  username:"Announcement Bot",
 		  channel:chan,
