@@ -690,6 +690,110 @@ app.view('delete_and_notify', async ({ ack, body, view, client, context }) => {
 
 });
 
+app.shortcut('channelannouncement', async ({ shortcut, ack, client }) => {
+
+  try {
+    // Acknowledge shortcut request
+    await ack();
+    console.log(shortcut.channel);
+    if ((shortcut.user.id === "U013K053EPN") || (shortcut.user.id === "U012N53R2JZ") || (shortcut.user.id === "UKCAMQE3G") || (shortcut.user.id === "U015JA25BUL"){
+	    
+      const result = await client.views.open({
+      trigger_id: shortcut.trigger_id,
+      view: {
+	"type": "modal",
+	"callback_id": "atchannelmodal",
+	"submit": {
+		"type": "plain_text",
+		"text": "Submit",
+		"emoji": true
+	},
+	"close": {
+		"type": "plain_text",
+		"text": "Cancel",
+		"emoji": true
+	},
+	"title": {
+		"type": "plain_text",
+		"text": "@Channel Tool",
+		"emoji": true
+	},
+	"blocks": [
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*Enter your desired @channel message below*"
+			}
+		},
+		{
+			"type": "input",
+			"block_id": "channelselect",
+			"element": {
+				"type": "conversations_select",
+				"placeholder": {
+					"type": "plain_text",
+					"text": "Select channel",
+					"emoji": true
+				},
+				"action_id": "multi_users_select-action"
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Select channel",
+				"emoji": true
+			}
+		},
+		{
+			"type": "input",
+			"block_id": "channelmessage",
+			"element": {
+				"type": "plain_text_input",
+				"multiline": true,
+				"action_id": "plain_text_input-action"
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Message",
+				"emoji": true
+			}
+		}
+	]
+}
+    });
+    } else {
+    // Call the views.open method using one of the built-in WebClients
+    const result1 = await client.views.open({
+      trigger_id: shortcut.trigger_id,
+      view: {
+        type: "modal",
+        title: {
+          type: "plain_text",
+          text: "Message Moderation"
+        },
+        close: {
+          type: "plain_text",
+          text: "Close"
+        },
+        blocks: [
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: "Apologies, but you cannot take this action as you do not have @channel permissions"
+            }
+          }
+        ]
+      }
+    });
+    }
+    console.log(result1);
+  }
+  catch (error) {
+    console.error(error);
+  }
+});
+
 (async () => {
   // Start your app
   await app.start(process.env.PORT || 3000);
