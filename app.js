@@ -804,10 +804,10 @@ app.view('atchannelmodal', async ({ ack, body, view, client, context }) => {
 	  console.log(body);
 	  console.log("VIEW");
 	  console.log(view);
-	  console.log("VIEW.STATE.VALUES.CHANNELSELECT");
-	  console.log(view.state.values.channelselect);
-	  console.log("VIEW.STATE.VALUES.CHANNELMESSAGE");
-	  console.log(view.state.values.channelmessage);
+	  console.log("VIEW.STATE.VALUES.CHANNELSELECT.MULTI_USERS_SELECT-ACTION");
+	  console.log(view.state.values.channelselect.multi_users_select-action);
+	  console.log("VIEW.STATE.VALUES.CHANNELMESSAGE.'PLAIN_TEXT_INPUT-ACTION'");
+	  console.log(view.state.values.channelmessage.'plain_text_input-action');
 	  let chan = view.state.values.channelselect.selected_conversation;
 	  let msg = "<!channel>\n" + view.state.values.channelmessage[0].value + "\nposted by <@" + "insert user here" + ">";
 	  const result = await client.chat.postMessage({
