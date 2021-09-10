@@ -736,7 +736,7 @@ app.shortcut('channelannouncement', async ({ shortcut, ack, client }) => {
 					"text": "Select channel",
 					"emoji": true
 				},
-				"action_id": "multi_users_select-action"
+				"action_id": "channelselect"
 			},
 			"label": {
 				"type": "plain_text",
@@ -750,7 +750,7 @@ app.shortcut('channelannouncement', async ({ shortcut, ack, client }) => {
 			"element": {
 				"type": "plain_text_input",
 				"multiline": true,
-				"action_id": "plain_text_input-action"
+				"action_id": "channelmessage"
 			},
 			"label": {
 				"type": "plain_text",
@@ -805,11 +805,11 @@ app.view('atchannelmodal', async ({ ack, body, view, client, context }) => {
 	  console.log("VIEW");
 	  console.log(view);
 	  console.log("VIEW.STATE.VALUES.CHANNELSELECT.MULTI_USERS_SELECT-ACTION");
-	  console.log(view.state.values.channelselect.multi_users_select-action);
+	  console.log(view.state.values.channelselect.channelselect);
 	  console.log("VIEW.STATE.VALUES.CHANNELMESSAGE.'PLAIN_TEXT_INPUT-ACTION'");
-	  console.log(view.state.values.channelmessage.'plain_text_input-action');
-	  let chan = view.state.values.channelselect.selected_conversation;
-	  let msg = "<!channel>\n" + view.state.values.channelmessage[0].value + "\nposted by <@" + "insert user here" + ">";
+	  console.log(view.state.values.channelmessage.channelmessage);
+	  let chan = view.state.values.channelselect.channelselect.selected_conversation;
+	  let msg = "<!channel>\n" + view.state.values.channelmessage.channelmessage.value + "\nposted by <@" + "insert user here" + ">";
 	  const result = await client.chat.postMessage({
 		  token:process.env.JK_TOKEN, //process.env.ANNOUNCEBOTTOKEN
 		  icon_emoji:":psc:",
