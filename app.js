@@ -807,7 +807,7 @@ app.view('atchannelmodal', async ({ ack, body, view, client, context }) => {
 	  console.log("VIEW.STATE.VALUES.MESSAGE");
 	  console.log(view.state.values.message);
 	  
-	  let msg = "<!channel\n" + "insert message here"
+	  let msg = "<!channel>\n" + "insert message here" + "\nposted by " + "insert user here"
 	  const result = await client.chat.postMessage({
 		  token:context.botToken,
 		  channel:"C02E2PV2CAF",
