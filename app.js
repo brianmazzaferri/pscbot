@@ -809,7 +809,7 @@ app.view('atchannelmodal', async ({ ack, body, view, client, context }) => {
 	  console.log("VIEW.STATE.VALUES.CHANNELMESSAGE.'PLAIN_TEXT_INPUT-ACTION'");
 	  console.log(view.state.values.channelmessage.channelmessage);
 	  let chan = view.state.values.channelselect.channelselect.selected_conversation;
-	  let msg = "<!channel>\n" + view.state.values.channelmessage.channelmessage.value + "\nposted by <@" + "insert user here" + ">";
+	  let msg = "<!channel>\n" + view.state.values.channelmessage.channelmessage.value + "\nposted by <@" + body.user.id + ">";
 	  const result = await client.chat.postMessage({
 		  token:process.env.JK_TOKEN, //process.env.ANNOUNCEBOTTOKEN
 		  icon_emoji:":psc:",
