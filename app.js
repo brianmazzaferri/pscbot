@@ -794,6 +794,31 @@ app.shortcut('channelannouncement', async ({ shortcut, ack, client }) => {
   }
 });
 
+app.view('atchannelmodal', async ({ ack, body, view, client, context }) => {
+  // Acknowledge the view_submission event
+  await ack();
+
+  // Message the user
+  try {	  
+	  console.log("BODY");
+	  console.log(body);
+	  console.log("VIEW");
+	  console.log(view);
+	  console.log("VIEW.STATE.VALUES.MESSAGE");
+	  console.log(view.state.values.message);
+	  
+	  let msg = "<!channel\n" + "insert message here"
+	  const result = await client.chat.postMessage({
+		  token:context.botToken,
+		  channel:"C02E2PV2CAF",
+		  text:msg
+  	  });
+  } catch (error) {
+    console.error(error);
+  }
+
+});
+
 (async () => {
   // Start your app
   await app.start(process.env.PORT || 3000);
