@@ -704,6 +704,13 @@ app.shortcut('channelannouncement', async ({ shortcut, ack, client, context }) =
 	  console.log("USERGROUPS");
 	  console.log(result3);
 	  
+	  const result4 = await result3.usergroups.filter(group => group.id === 'S02E9MJPDL2');
+	  
+	  const userList = await result4.users
+	  
+	  console.log("USERLIST");
+	  console.log(userList);
+	  
     if ((shortcut.user.id === "U013K053EPN") || (shortcut.user.id === "U012N53R2JZ") || (shortcut.user.id === "UKCAMQE3G") || (shortcut.user.id === "U015JA25BUL")){  
 	    
 	    
