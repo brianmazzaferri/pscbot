@@ -690,7 +690,7 @@ app.view('delete_and_notify', async ({ ack, body, view, client, context }) => {
 
 });
 
-app.shortcut('channelannouncement', async ({ shortcut, ack, client }) => {
+app.shortcut('channelannouncement', async ({ shortcut, ack, client, context }) => {
 
   try {
     // Acknowledge shortcut request
@@ -698,7 +698,7 @@ app.shortcut('channelannouncement', async ({ shortcut, ack, client }) => {
     console.log(shortcut);
 
 	  const result3 = await client.usergroups.list({
-      		token: shortcut.token,
+      		token: context.botToken,
       		include_users:true 
     	   });
 	  console.log("USERGROUPS");
