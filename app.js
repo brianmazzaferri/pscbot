@@ -696,7 +696,16 @@ app.shortcut('channelannouncement', async ({ shortcut, ack, client }) => {
     // Acknowledge shortcut request
     await ack();
     console.log(shortcut.channel);
-    if ((shortcut.user.id === "U013K053EPN") || (shortcut.user.id === "U012N53R2JZ") || (shortcut.user.id === "UKCAMQE3G") || (shortcut.user.id === "U015JA25BUL")){
+
+	  const result3 = await client.usergroups.list({
+      		token: client.botToken,
+      		include_users:true 
+    	   });
+	  console.log("USERGROUPS");
+	  console.log(result3);
+	  
+    if ((shortcut.user.id === "U013K053EPN") || (shortcut.user.id === "U012N53R2JZ") || (shortcut.user.id === "UKCAMQE3G") || (shortcut.user.id === "U015JA25BUL")){  
+	    
 	    
       const result = await client.views.open({
       trigger_id: shortcut.trigger_id,
