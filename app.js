@@ -698,7 +698,7 @@ app.shortcut('channelannouncement', async ({ shortcut, ack, client }) => {
     console.log(shortcut);
 
 	  const result3 = await client.usergroups.list({
-      		token: shortcut.botToken,
+      		token: shortcut.token,
       		include_users:true 
     	   });
 	  console.log("USERGROUPS");
