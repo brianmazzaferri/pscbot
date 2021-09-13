@@ -706,6 +706,9 @@ app.shortcut('channelannouncement', async ({ shortcut, ack, client, context }) =
 	  
 	  const result4 = await result3.usergroups.filter(group => group.id === 'S02E9MJPDL2');
 	  
+	  console.log("USERGROUP TARGETED");
+	  console.log(result4);
+	  
 	  const userList = await result4.users
 	  
 	  console.log("USERLIST");
