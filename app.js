@@ -714,7 +714,7 @@ app.shortcut('channelannouncement', async ({ shortcut, ack, client, context }) =
 	  console.log("USERLIST");
 	  console.log(userList);
 	  
-    if ((shortcut.user.id === "U013K053EPN") || (shortcut.user.id === "U012N53R2JZ") || (shortcut.user.id === "UKCAMQE3G") || (shortcut.user.id === "U015JA25BUL")){  
+    if (userList.includes(shortcut.user.id)){  
 	    
 	    
       const result = await client.views.open({
