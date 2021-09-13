@@ -819,21 +819,35 @@ app.view('atchannelmodal', async ({ ack, body, view, client, context }) => {
 
   // Message the user
   try {	  
-	  console.log("BODY");
-	  console.log(body);
-	  console.log("VIEW");
-	  console.log(view);
-	  let chan = view.state.values.channelselect.channelselect.selected_conversation;
-	  let msg = "<!channel>\n\n" + view.state.values.channelmessage.channelmessage.value + "\n\n(posted by <@" + body.user.id + ">)";
-	  const result = await client.chat.postMessage({
-		  token:process.env.ANNOUNCEBOTTOKEN, //process.env.JK_TOKEN
-		  icon_emoji:":psc:",
-		  username:"Announcement Bot",
-		  channel:chan,
-		  text:msg
-  	  });
+	  const channelList = ['C014Y67SJBS','C016LLGAXU2','C016RRG0E8Z','C013J925WPM','C013D739XCN','C01ARNG7FC2','C015T7WQF0X','C01N9FZQS1H','C013CQASWHY','C014RTLFMH7','C0144S7A24E','C013WM5EGNM','C01BF4MLA9H','C016GA6RQKW','C018DLSCYBY','C01M56UFT6J','C013QRNRJ1Z','C0139T2N3UP','C01EYD0G30E','C013J8GHT8B','C01L7MMDD0U','C019LM8AY9L','C013ULQKMPZ','C015M0YLCDQ','C014QDS30KT']
+	  if(channelList.includes(view.state.values.channelselect.channelselect.selected_conversation)){
+		  console.log("BODY");
+		  console.log(body);
+		  console.log("VIEW");
+		  console.log(view);
+		  let chan = view.state.values.channelselect.channelselect.selected_conversation;
+		  let msg = "<!channel>\n\n" + view.state.values.channelmessage.channelmessage.value + "\n\n(posted by <@" + body.user.id + ">)";
+		  const result = await client.chat.postMessage({
+			  token:process.env.ANNOUNCEBOTTOKEN, //process.env.JK_TOKEN
+			  icon_emoji:":psc:",
+			  username:"Announcement Bot",
+			  channel:chan,
+			  text:msg
+		  });
+	  } else {
+		const result2 = await client.chat.postMessage({
+			token:context.botToken,
+			channel:body.user.id,
+			text: "Sorry, I can't @channel to that channel. If you think this is an error, contact <@U015JA25BUL>"
+		});
+	  }
   } catch (error) {
     console.error(error);
+	  	const result2 = await client.chat.postMessage({
+			token:context.botToken,
+			channel:body.user.id,
+			text: "Sorry, the message failed. Make sure you have added <@U02DW72LWGN> to the channel where you want to use @channel."
+		});
   }
 
 });
