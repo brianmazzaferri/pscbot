@@ -708,8 +708,10 @@ app.shortcut('channelannouncement', async ({ shortcut, ack, client, context }) =
 	  
 	  console.log("USERGROUP TARGETED");
 	  console.log(result4);
-	  
-	  const userList = await result4[0].users
+
+    const result5 = await result3.usergroups.filter(group => group.id === 'S02PDCVQQ4U');
+
+    const userList = await result4[0].users.concat(result5[0].users);
 	  
 	  console.log("USERLIST");
 	  console.log(userList);
