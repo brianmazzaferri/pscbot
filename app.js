@@ -557,7 +557,7 @@ app.shortcut('moderate_message', async ({ shortcut, ack, client }) => {
     // Acknowledge shortcut request
     await ack();
     console.log(shortcut.channel);
-    if ((shortcut.user.id === "U013K053EPN") || (shortcut.user.id === "U012N53R2JZ") || (shortcut.user.id === "U015JA25BUL")|| (shortcut.user.id === "U01NPP1CFM4")||
+    if ((shortcut.user.id === "U013K053EPN") || (shortcut.user.id === "U012N53R2JZ") || (shortcut.user.id === "U015JA25BUL")|| (shortcut.user.id === "U01NPP1CFM4")|| (shortcut.user.id === "U02TDSFHRR7")|| (shortcut.user.id === "U02N2H90JPN")||
         (shortcut.channel.id === "C0144S7A24E" && ((shortcut.user.id === "U01499BUKRR") || (shortcut.user.id === "U0145HJUK9S") || (shortcut.user.id === "U01608PKVGU"))) ||
 	(shortcut.channel.id === "C015T7WQF0X" && ((shortcut.user.id === "U0155QZLAD6") || (shortcut.user.id === "U01F0UB7XME") || (shortcut.user.id === "U01DHSWLT8V")))
        ){
