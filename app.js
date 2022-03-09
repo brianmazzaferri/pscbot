@@ -10,6 +10,8 @@ app.event("message", async ({ event, context }) => {
   try {
     console.log(event);
     console.log(context);
+
+    /*
     if (
       event.text.includes("Chicago") &&
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
@@ -438,7 +440,7 @@ app.event("message", async ({ event, context }) => {
           "Welcome aboard! :ship: I noticed you mentioned an area in Benelux, be sure to join <#C01ARNG7FC2> to connect with others in your area!"
       });
     }
-	  
+	  */
     if (
       (event.user != "U012N53R2JZ" && event.user != "U01NPP1CFM4" && event.user != "UKCAMQE3G" && event.user != "U015JA25BUL" ) &&
       ((event.channel === "C022YTE455E")||(event.channel === "C013PPG2D60"))
