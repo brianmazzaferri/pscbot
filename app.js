@@ -442,7 +442,7 @@ app.event("message", async ({ event, context }) => {
     }
 	  */
     if (
-      (event.user != "U012N53R2JZ" && event.user != "U01NPP1CFM4" && event.user != "UKCAMQE3G" && event.user != "U015JA25BUL" ) &&
+      (event.user != "U012N53R2JZ" && event.user != "U01NPP1CFM4" && event.user != "UKCAMQE3G" && event.user != "U015JA25BUL" && event.user != "U02N2H90JPN" ) &&
       ((event.channel === "C022YTE455E")||(event.channel === "C013PPG2D60"))
     ) {
       const result = await app.client.chat.postMessage({
