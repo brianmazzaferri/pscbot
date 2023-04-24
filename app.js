@@ -462,7 +462,7 @@ app.event("message", async ({ event, context }) => {
     
     if (
       (event.text.includes("!test"))&&
-      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
+      (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1" || event.channel === "C054LPW5HT7")
     ) {
         const result = await app.client.chat.postMessage({
         token: process.env.JK_TOKEN,
