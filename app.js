@@ -465,7 +465,8 @@ app.event("message", async ({ event, context }) => {
       (event.channel === "C015EMK7Z9N" || event.channel === "C013W72L9L1")
     ) {
         const result = await app.client.chat.postMessage({
-        token: process.env.JK_TOKEN,
+        token: context.botToken,
+ //     token: process.env.JK_TOKEN,
         channel: event.user,
         as_user: true,
         text:
